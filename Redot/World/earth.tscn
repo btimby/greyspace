@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj6e0ogg7t15"]
+
+[ext_resource type="Script" path="res://World/earth.gd" id="1_glfff"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_glfff"]
+
+[node name="Earth" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.921674, 0.387966, 0, -0.387966, 0.921674, 0, 0.85513, 1.86252)
+script = ExtResource("1_glfff")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866026, -0.5, 0, 0.5, 0.866026, 0, -0.0599162, -2.06169)
+mesh = SubResource("ArrayMesh_glfff")

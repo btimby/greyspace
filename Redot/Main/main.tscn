@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceenhbf1iljrh"]
+
+[ext_resource type="PackedScene" uid="uid://cj6e0ogg7t15" path="res://World/earth.tscn" id="1_yh5la"]
+[ext_resource type="Script" path="res://Main/camera.gd" id="2_2w1kt"]
+
+[sub_resource type="Environment" id="Environment_yh5la"]
+background_mode = 1
+background_color = Color(0, 0, 0.32549, 1)
+
+[node name="Main" type="Node3D"]
+
+[node name="Earth" parent="." instance=ExtResource("1_yh5la")]
+render_type = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yh5la")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.750192, 0.66122, 0, -0.66122, 0.750192, 0, 200, 200)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("2_2w1kt")

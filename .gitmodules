@@ -1,0 +1,4 @@
+[submodule "h3_gdextension/godot-cpp"]
+	path = h3_gdextension/godot-cpp
+	url = https://github.com/godotengine/godot-cpp
+	branch = 4.3
