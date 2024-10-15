@@ -1,5 +1,5 @@
-#ifndef GDH3_REGISTER_TYPES_H
-#define GDH3_REGISTER_TYPES_H
+#ifndef GDH33D_REGISTER_TYPES_H
+#define GDH33D_REGISTER_TYPES_H
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -8,4 +8,4 @@ using namespace godot;
 void initialize_example_module(ModuleInitializationLevel p_level);
 void uninitialize_example_module(ModuleInitializationLevel p_level);
 
-#endif // GDH3_REGISTER_TYPES_H
+#endif // GDH33D_REGISTER_TYPES_H
