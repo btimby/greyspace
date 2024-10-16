@@ -1,6 +1,7 @@
-#include "register_types.h"
-
-#include "gdh33d.h"
+#include "register_types.hpp"
+#include "h33d.hpp"
+#include "h33dIndex.hpp"
+#include "h33dLatLng.hpp"
 
 #include <gdextension_interface.h>
 #include <godot_cpp/core/defs.hpp>
@@ -13,7 +14,9 @@ void initialize_h33d_module(ModuleInitializationLevel p_level) {
 		return;
 	}
 
-	GDREGISTER_CLASS(GDH33D);
+	GDREGISTER_CLASS(H33D);
+	GDREGISTER_CLASS(H33DIndex);
+	GDREGISTER_CLASS(H33DLatLng);
 }
 
 void uninitialize_h33d_module(ModuleInitializationLevel p_level) {

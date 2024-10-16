@@ -15,6 +15,7 @@ env = SConscript("godot-cpp/SConstruct")
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/"])
 sources = Glob("src/*.cpp")
+lib = File('h3/build/lib/libh3.a')
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
@@ -22,22 +23,26 @@ if env["platform"] == "macos":
             env["platform"], env["target"], env["platform"], env["target"]
         ),
         source=sources,
+        LIBS=[lib],
     )
 elif env["platform"] == "ios":
     if env["ios_simulator"]:
         library = env.StaticLibrary(
             "demo/bin/libgdh3.{}.{}.simulator.a".format(env["platform"], env["target"]),
             source=sources,
+            LIBS=[lib],
         )
     else:
         library = env.StaticLibrary(
             "demo/bin/libgdh3.{}.{}.a".format(env["platform"], env["target"]),
             source=sources,
+            LIBS=[lib],
         )
 else:
     library = env.SharedLibrary(
         "demo/bin/libgdh3{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
+        LIBS=[lib],
     )
 
 Default(library)

@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9b7edd11..ce17a620 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -87,7 +87,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+     set(H3_IS_ROOT_PROJECT ON)
+ endif()
+ 
+-set(H3_COMPILE_FLAGS "")
++set(H3_COMPILE_FLAGS "-fPIC")
+ set(H3_LINK_FLAGS "")
+ if(NOT WIN32)
+     # Compiler options are set only on non-Windows, since these options
