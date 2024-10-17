@@ -10,13 +10,18 @@ h3/CMakeLists.txt:
 	patch -d h3 < h3-CMakeLists.txt.patch
 
 
-h3/build/src/h3lib/include/h3api.h:
+h3/build/src/h3lib/include/h3api.h: h3/CMakeLists.txt
 	mkdir -p h3/build
 	cd h3/build && cmake -DCMAKE_BUILD_TYPE=Release .. && make
 
 
 godot-cpp/SConstruct:
 	git submodule update --init godot-cpp
+
+
+.PHONY: deps
+deps:
+	sudo apt install cmake
 
 
 .PHONY: clean

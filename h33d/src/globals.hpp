@@ -1,0 +1,6 @@
+#ifndef H33D_GLOBALS_HPP
+#define H33D_GLOBALS_HPP
+
+const float H33D_DEFAULT_RADIUS=6378137.0;
+
+#endif // H33D_GLOBALS_HPP

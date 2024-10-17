@@ -1,6 +1,7 @@
 #ifndef H33D_HPP
 #define H33D_HPP
 
+#include "globals.hpp"
 #include "h33dIndex.hpp"
 #include <godot_cpp/classes/node.hpp>
 
@@ -22,7 +23,17 @@ public:
 	H33D();
 	~H33D();
 
+	int resolution;
+	float radius;
+
+	void set_resolution(int);
+	int get_resolution();
+	void set_radius(float);
+	float get_radius();
+
 	H33DIndex *latLngToCell(float, float, int);
+	Variant getRes0Cells();
+	Variant getPentagons();
 };
 
 }
