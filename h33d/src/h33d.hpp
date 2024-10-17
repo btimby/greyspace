@@ -2,7 +2,6 @@
 #define H33D_HPP
 
 #include "h33dIndex.hpp"
-#include "h33dLatLng.hpp"
 #include <godot_cpp/classes/node.hpp>
 
 extern "C" {
@@ -23,7 +22,7 @@ public:
 	H33D();
 	~H33D();
 
-	H33DIndex *latLngToCell(H33DLatLng*, int);
+	H33DIndex *latLngToCell(float, float, int);
 };
 
 }

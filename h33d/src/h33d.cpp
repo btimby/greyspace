@@ -1,6 +1,5 @@
 #include "h33d.hpp"
 #include "h33dIndex.hpp"
-#include "h33dLatLng.hpp"
 #include <godot_cpp/core/class_db.hpp>
 
 using namespace godot;
@@ -18,10 +17,13 @@ H33D::~H33D() {
 	// Add your cleanup here.
 }
 
-H33DIndex *H33D::latLngToCell(H33DLatLng *loc, int res) {
+H33DIndex *H33D::latLngToCell(float lat, float lng, int res) {
+	LatLng location;
+	location.lat = degsToRads(lat);
+	location.lng = degsToRads(lng);
 	H33DIndex *index = new H33DIndex();
 
-	//latLngToCell(&loc.location, res, index);
+	::latLngToCell(&location, res, &(index->index));
 
 	return index;
 }

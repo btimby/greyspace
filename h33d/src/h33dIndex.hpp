@@ -3,6 +3,10 @@
 
 #include <godot_cpp/classes/node.hpp>
 
+extern "C" {
+#include "../h3/build/src/h3lib/include/h3api.h"
+}
+
 namespace godot {
 
 class H33DIndex : public Node {
@@ -16,6 +20,9 @@ protected:
 public:
 	H33DIndex();
 	~H33DIndex();
+
+	H3Index index;
+
 };
 
 }
